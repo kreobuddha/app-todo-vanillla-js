@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Todo List</title>
+</head>
+<body>
+
+  <div class="container">
+    <header class="text-center text-light my-4">
+      <h1 class="mb-4">Todo List</h1>
+    </header>
+
+    <main class="main-container">
+      <form class="add-form j-add-form">
+        <div class="form-inner">
+          <label class="label" for="add">Add a new todo...</label>
+  
+          <input class="form-control" type="text" name="add" id="add"/>
+          
+          <!-- <button type="button">add</button> -->
+        </div>
+      </form>
+
+      <div class="columns j-columns">
+        <div class="column todo-group todo-group--open">
+          <h2 class="h2">todos</h2>
+          <!-- <span class="todos-number">21</span> -->
+
+          <ul class="todo-list j-todo-list--open">
+            <!-- <li class="card">
+              <form class="update-title-form j-update-form">
+                <input type="text" class="form-control form-control--update j-update-input" name="update">
+                <i class="fa  fa-times close j-close"></i>
+              </form>
+
+              <p class="text">Lorem ipsum dolor sit amet.</p>
+
+              <i class="far fa-edit edit j-edit"></i>
+              <i class="far fa-trash-alt delete j-delete"></i>
+              
+              <div class="move-group">
+                <i class="fas fa-arrow-left move-left j-move-left"></i>
+                <i class="fas fa-arrow-up move-up j-move-left"></i>
+                <i class="fas fa-arrow-right move-right j-move-right"></i>
+                <i class="fas fa-arrow-down move-down j-move-right"></i>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+        
+        <div class="column todo-group todo-group--in-progress">
+          <h2 class="h2">in-progress</h2>
+
+          <ul class="todo-list j-todo-list--in-progress">
+          </ul>
+        </div>
+        
+        <div class="column todo-group todo-group--completed">
+          <h2 class="h2">completed</h2>
+
+          <ul class="todo-list j-todo-list--completed">
+          </ul>
+        </div>
+      </div>
+    </main>
+
+  </div>
+  
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAzLiWLG4_kgDwmMI81o6NGMahntVWdmRs",
+      authDomain: "todo-urbanoshvilli.firebaseapp.com",
+      databaseURL: "https://todo-urbanoshvilli.firebaseio.com",
+      projectId: "todo-urbanoshvilli",
+      storageBucket: "todo-urbanoshvilli.appspot.com",
+      messagingSenderId: "1028207110583",
+      appId: "1:1028207110583:web:8a333197e00bb9bcb1e032"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
