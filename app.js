@@ -50,6 +50,7 @@ let addTodo = (todo, id) => {
     listCompleted.innerHTML += html;
   }
 };
+
 let deleteTodo = id => {
   const todos = document.querySelectorAll('.card');
   todos.forEach(todo => {
@@ -58,8 +59,6 @@ let deleteTodo = id => {
     }
   })
 };
-
-
 
 let updateStatus = (card, id, status, list) => {
   db.collection('todos').doc(id).update({
@@ -70,6 +69,7 @@ let updateStatus = (card, id, status, list) => {
     console.log(err);
   });
 };
+
 let updateTitle = (card, id, title, form) => {
   db.collection('todos').doc(id).update({
     title: title
